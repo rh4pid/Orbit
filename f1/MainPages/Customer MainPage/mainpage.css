@@ -177,7 +177,7 @@ main{
 }
 .side-nav{
     width: 12%;
-    height: 700px;
+    height: 750px;
     display: flex;
     flex-direction: column;
     background-color: var(--header-color);
@@ -219,7 +219,7 @@ main{
 .content-container{
     background-color: var(--main-content);
     width: 86%;
-    height: 700px;
+    height: 750px;
     display: flex;
     align-items: center;
     justify-content: space-around;
