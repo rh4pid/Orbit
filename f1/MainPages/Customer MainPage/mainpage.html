@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit</title>
+    <link rel="stylesheet" href="mainpage.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="chatbot.css">
+
+    <link rel="icon" type="image/png" sizes="32x32"  href="../../LandingPage/fabicon/favicon-32x32.png">
+
+    <!-- ICONS FROM FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- GOOGLE ICONS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div id="div-logo">
+            <img src="logo.jpg" alt="" id="logo">
+            &nbsp;
+            <span class="orbitron-discover logo-name">Orbit</span>
+        </div>   
+        <div id="searchbar">
+            <input type="search" name="" id="searchBox" placeholder="What are you looking for...">
+            <div id="searchDropdown" class="searchDropdown"></div>
+        </div>
+
+        <div class="profile-container">
+            <div class="dark-mode-Icons">
+                <i class="fa-solid dark-mode-icon fa-sun"></i> 
+            </div>
+            <div class="headerNotification">
+                <i class="fa-solid fa-bell"></i>
+                <span class="notificationCount">0</span>
+            </div>
+            <img id="profile-button" src="../icons/profile-outline.svg"></img>
+        </div>
+    </header>
+
+    <main>
+        <!-- SIDE TABS -->
+        <div class="side-nav">
+            <p class="side-tabs"><span><i class="fa-solid fa-robot fa-2xl"></i>Bot</span></p>
+            <p class="side-tabs active"><i class="fa-solid fa-house"></i>Home</p>
+            <p class="side-tabs"><i class="fa-solid fa-star"></i>My Artisan</p>
+            <p class="side-tabs"><i class="fa-solid fa-clock"></i></i>Recent</p>
+            <p class="side-tabs"><i class="fa-solid fa-wallet"></i>Wallet</p>
+            <p class="side-tabs"><i class="fa-solid fa-bell"></i>Notifications</p>
+            <p class="side-tabs"><i class="fa-solid fa-gear"></i>Settings</p>
+        </div>
+        <!-- CONTENTS FOR EACH TAB -->
+        <div class="content-container">
+            <!-- CHATBOT  -->
+            <div class="main-content ">
+                <div class="chat-container">
+                    <div class="chat-box" id="chatBox"></div>
+                    <div class="input-container">
+                        <input type="text" id="userInput" placeholder="Ask me anything...">
+                        <button id="sendButton">Send</button>
+                    </div>
+                </div>
+            </div>
+            <!-- HOME -->
+            <div class="main-content active">
+                <div class="home">
+                    <div class="home-tabs">
+                        <div class="home-tab active">For You</div>
+                        <div class="home-tab">Categories</div>
+                    </div>
+                    <div class="home-tab-contents">
+                        <div class="home-tab-content active">
+                            <div id="home-for-you">
+                                <div class="for-you-slideShow" >
+                                    <div class="slideShow-container">
+                                        <!-- I WILL DYNAMICALLY GENERATE THE ITEMS TO THE DIV BELOW  -->
+                                        <div id="slide"></div>
+                                        <div class="slideShow-buttons">
+                                          <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+                                          <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="suggestion-container">
+                                    <div class="suggestions"> 
+                                        <div class="apps">
+                                            <div class="app1" style="background-image: url('../pic/beauty.jpg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/ceramic.jpg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/Construction.jpg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/culinary.jpg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/DigitalArts.jpeg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/education.jpeg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/electric.jpg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/event.jpeg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/fineArt.jpg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/glass.jpeg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/home.jpg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/jewelry.jpg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/metal.jpg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/music.jpeg'); background-size: cover;"></div>
+                                            <div class="app1" style="background-image: url('../pic/other.jpeg'); background-size: cover;"></div>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home-tab-content ">
+                            <div id="home-category">
+                                <!-- INFLATE THE DIV BELOW DYNAMICALLY -->
+                                <div class="Cat">
+                
+                                </div>
+                            </div>
+                        </div>
+                        <!-- DISPLAY SKILLS RELATED TO CATEGORY -->
+                        <div class="home-tab-content">
+                            <div class="servicePage">
+                                <div class="serviceHeader">
+                                    <p>Service Type : <span class="serviceValue"></span></p>
+                                </div>
+                                <div class="serviceProviders">
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <!-- DISPLAY ARTISANS OF THE SAME SKILL TYPE -->
+                        <div class="home-tab-content">
+                            <div class="skillsContainer">
+                                <div class="filterCon">
+                                    <div class="skill-filter-container">
+                                        <input type="text" id="locationInput" placeholder="Enter your location or Click the icon to get location...">
+                                        <span class="filter-location-icon" id="getUserLocation"><i class="fa-solid fa-location-dot" style="color: darkblue;"></i></span>
+                                    </div>
+                                </div>
+                                <div id="resultsList">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                            <th>Name</th>
+                                            <th>Location</th>
+                                            <th>Rating</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- INSPECT ARTISAN SELECTED -->
+                        <div class="home-tab-content">
+                            <div class="homeArtisanPage">
+                                <div class="ArtisanPage">
+                                    <div class="Artisan-Profile">
+                                        <div class="ArtanImage-preview" id="iArtisanImagePreview">
+                                            <img id="ArtisanPreviewImg" src="" style="display: none;">
+                                        </div>
+                                    </div>                                    
+                                    <div class="pNames">
+                                        <h2>Personal</h2>
+                                        <div>
+                                            <p><label for="">First Name: </label><span id="Pfirst"></span></p>
+                                            <p><label for="">Last Name: </label><span id="Plast"></span></p>
+                                        </div>
+                                        <div>
+                                            <p><label for="Education">Educational:</label> <span class="Qedubg"></span></p>
+                                            <p><label for="">Age: </label><span id="Page">18 - 30</span></p>
+                                        </div>
+                                    </div> 
+                                    <div class="qualifiactionInfo">
+                                        <h2>Qualifications</h2>
+                                        <div>
+                                            <p><label for="qExp">Years of Experience:</label> <span class="Qexp">1 - 6</span></p>
+                                            <p><label for="Vert">Verified:</label> <span class="Qvert">Yes</span></p>   
+                                        </div>
+                                        <div>
+                                            <p><label for="Cert">Certified :</label> <span class="Qcert"></span></p>
+                                            <p><label for="rate">Rate :</label> <span class="Qrate"></span></p>
+                                        </div>
+                                    </div>
+                                    <div class="Qbutton">
+                                        <button class="ArtisanPageBtn">Request Now</button>
+                                        <button class="ArtisanPageBtn">Engage First</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- BOOK ARTISAN -->
+                        <div class="home-tab-content">
+                            <div class="bookingArtisan">
+                                <div class="bookArtisan">
+                                    <h2 class="bookTTL orbitron-discover">BOOK ARTISAN</h2>
+                                    <div class="customerDetails">
+                                        <div class="cd1">
+                                            <div class="form-group-cd">
+                                                <input type="text" id="fullNameBook" placeholder=" " required>
+                                                <label for="fullNameBook">Your Full Name</label>
+                                            </div>
+                                            <div class="form-group-cd">
+                                                <input type="text" id="customerLocBook" placeholder=" " required>
+                                                <label for="customerLocBook">Job Location</label>
+                                            </div>
+                                        </div>
+                                        <div class="cd2">
+                                            <div class="form-group-cd">
+                                                <input type="text" id="serviceTypeBook" placeholder=" " disabled>
+                                                <label for="serviceTypeBook">Service Type</label>
+                                            </div>
+                                            <div class="bookPaymentOption">
+                                                <select id="paymentSelect">
+                                                    <option value="" disabled selected>Select Payment Option</option>
+                                                    <option value="cash">Cash</option>
+                                                    <option value="Mobile Money">Mobile Money</option>
+                                                    <option value="Credit Card">Credit Card</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="jobDetails">
+                                        <h3 class="orbitron-discover" style="color: darkblue;">Request Type</h3>
+                                        <div class="radio-group">
+                                            <label>
+                                                <input type="radio" name="requestType" value="Instant" id="instantRadio" checked> Instant
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="requestType" value="Scheduled" id="scheduledRadio"> Scheduled
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="scheduledBlock" id="scheduledBlock">
+                                        <div class="date-range-selection">
+                                            <div class="cd3">
+                                                <div>
+                                                    <label for="startDate">Start Date:</label>
+                                                    <input type="date" id="startDate">
+                                                </div>
+                                                <div>
+                                                    <label for="endDate">End Date:</label>
+                                                    <input type="date" id="endDate">
+                                                </div>
+                                            </div>
+                                            <div class="cd4">
+                                                <div>
+                                                    <label for="startTime">Start Time:</label>
+                                                    <input type="time" id="startTime">
+                                                </div>
+                                                <div>
+                                                    <label for="endTime">End Time:</label>
+                                                    <input type="time" id="endTime">
+                                                </div>
+                                            </div>
+                                            <div class="bookRangeCM">
+                                                <button type="button" id="selectCurrentMonth">Select Current Month</button>
+                                            </div>
+                                        </div>
+                                
+                                        <div class="Preferred-days">
+                                            <h3 style="color: darkblue;" class="orbitron-discover">Preferred Days:</h3>
+                                            <div class="calendar-container">
+                                                <header class="header1">
+                                                    <button type="button" id="prevMonth">◀</button>
+                                                    <h3 id="monthYear"></h3>
+                                                    <button type="button" id="nextMonth">▶</button>
+                                                </header>
+                                                <div class="days-header">
+                                                    <div>Sun</div>
+                                                    <div>Mon</div>
+                                                    <div>Tue</div>
+                                                    <div>Wed</div>
+                                                    <div>Thu</div>
+                                                    <div>Fri</div>
+                                                    <div>Sat</div>
+                                                </div>
+                                                <div class="days" id="days"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bookArtisanBtns">
+                                        <button  class="bookArtisanbtn">Cancel</button>
+                                        <button  class="bookArtisanbtn">Request</button>
+                                    </div>
+                                </div>
+                                <div class="overlay" id="overlay" id="closePopup"></div>
+    
+                                <div class="popup" id="popup">
+                                    <h2><span class="ServiceTypeBooking orbitron-discover">Mason</span></h2>
+                                    <div>
+                                        <H3 class="orbitron-discover">Artisan Details</H3>
+                                        <p>Name: <span class="ArtisanName">Douglas Otoo</span></p>
+                                        <p>Loaction: <span class="Artisanlocation">Tema Comm 15</span></p>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h3 class="orbitron-discover">Customer Details</h3>
+                                        <p>Name: <span class="CusName">Nii Brown</span></p>
+                                        <p>Loaction: <span class="Cuslocation">Tema Comm 15, roman junction</span></p>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h3 class="orbitron-discover">Job Details</h3>
+                                        <p>Payment Method: <span class="custPayMed">Cash</span></p>
+                                        <p>Time: <span class="custTime">11:00 am - 6:00 pm</span></p>
+                                        <p>Days: <span class="CustArtDays">mon || Tue || Wed </span></p>
+                                    </div>
+                                    <div class="buttonsComfirmPage">
+                                        <button id="closePopup">Cancel</button>
+                                        <button id="confirmAction">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ENGAGE ARTISAN -->
+                        <div class="home-tab-content">
+                            <div class="ArtisanEngage Econtainer">
+                                <div class="request">
+                                    <div class="image-Video-uploads">
+                                        <div class="messageBox">
+                                            <div id="messageBoxTextArea" class="message-display">
+                                            </div>
+                                            <div>
+                                                <input type="text" id="messageInputField" placeholder="Type your message..." />
+                                                <button class="btn-send" id="btn-send">Send</button>
+                                            </div>
+                                            
+                                        </div>
+                                    
+                                        <div class="image upload-section">
+                                            <div id="image-container" class="preview-container"></div>
+                                            <input type="file" name="media" id="file-media" class="hidden-input" accept="image/*,video/*" multiple>
+                                            <span class="material-icons icon cam" onclick="document.getElementById('file-media').click()" id="cam">add_a_photo</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <hr class="divider">
+                                    <div class="Tblock">
+                                        <h2>Call Instead <input type="checkbox" class="callCheck"></h2>
+                                        <div class="ArtisanTblock">
+                                            <span>Telephone: <span class="ArtisanTel contact-number"></span></span>
+                                        </div>
+                                    </div>
+                                    <div class="EngageBtn">
+                                        <button class="btn-request cancel">Cancel</button>
+                                        <button class="btn-request proceed">Proceed</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Favourites -->
+            <div class="main-content">
+                <div id="artisan">
+                    <table>
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Cycles</th>
+                            <th>Services</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- RECENTS -->
+            <div class="main-content">
+                <div id="recents">
+                    <table>
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>NAME</th>
+                            <th>Work</th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                </div>
+            </div>
+            <!-- WALLET -->
+            <div class="main-content">
+                <div id="wallet">
+                    <div class="cards">
+                        <div class="expenseCard">
+                            TOTAL EXPENSE
+    
+                        </div>
+                        <div class="expenseCard">
+                            TOTAL EXPENSE
+    
+                        </div>
+                        <div class="expenseCard">
+                            TOTAL EXPENSE
+    
+                        </div>
+                    </div>
+                    <div id="transactions">
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>Cycles</th>
+                                <th>Work</th>
+                                <th>Number</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- NOTIFICATIONS -->
+            <div class="main-content">
+                <div id="Notifications">
+                    <table id="acceptedRequestsTable">
+                        <thead>
+                          <tr>
+                            <th>Artisan Name</th>
+                            <th>Location</th>
+                            <th>Job Time</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- DISPLAY FOR PENDING REQUESTS -->
+                <div class="overlay" id="overlay1" id="closePopup1"></div>
+    
+                <div class="popup" id="popup1">
+                    <h2><span class="orbitron-discover">- REQUEST SLIP -</span></h2>
+                    <div>
+                        <H3 class="orbitron-discover">Artisan Details</H3>
+                        <p>Name: <span class="ArtisanName1">Douglas Otoo</span></p>
+                        <p>Service: <span class="ServiceTypeBooking1">Tema Comm 15</span></p>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="orbitron-discover">Customer Details</h3>
+                        <p>Name: <span class="CusName1">Nii Brown</span></p>
+                        <p>Loaction: <span class="Cuslocation1">Tema Comm 15, roman junction</span></p>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="orbitron-discover">Job Details</h3>
+                        <p>Payment Method: <span class="custPayMed1">Cash</span></p>
+                        <p>Time: <span class="custTime1">11:00 am - 6:00 pm</span></p>
+                        <p>Days: <span class="CustArtDays1">mon || Tue || Wed </span></p>
+                    </div>
+                    <div class="buttonsComfirmPage">
+                        <button id="closePopup1">Cancel Request</button>
+                        <button id="confirmAction1">Keep</button>
+                    </div>
+                </div>
+
+                <!-- DISPLAY FOR JOB PENDING CONFIRMATION -->
+                <div class="overlay" id="overlay2"></div>
+
+                <div class="popup" id="popup2">
+                    <div class="popup-header orbitron-discover">
+                        - CONFIRM JOB DONE SLIP -
+                    </div>
+                    <div>
+                        <H3 class="orbitron-discover" style="text-align: center;">Artisan Details</H3>
+                        <p>Name: <span class="ArtisanName2">Douglas Otoo</span></p>
+                        <p>Service: <span class="ServiceTypeBooking2">Tema Comm 15</span></p>
+                    </div>
+                    <hr>
+                    <div class="job-decision">
+                        <label><input type="radio" name="jobStatus" value="confirm" id="confirmRadio"> <span style="color: #28a745; font-weight: bold;">Confirm</span> Job Done</label><br>
+                        <label><input type="radio" name="jobStatus" value="deny" id="denyRadio"> <span style="color: #dc3545; font-weight: bold;">Deny</span> Job Done</label>
+                    </div>
+              
+                    <div id="confirmSection" style="display: none;">
+                        <label>⭐ <span style="color: #ffc107;">Rate the Artisan</span> (1-5):</label>
+                        <div class="stars" id="starRating">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                        <input type="hidden" id="ratingInput" />
+                
+                        <br><br>
+                        <label><input type="checkbox" id="favouriteCheckbox"> <span style="color: #007bff;">Add Artisan to Favourites</span></label><br><br>
+                        <div class="action-buttons">
+                            <button id="sendConfirm">Confirm & Send</button>
+                            <button type="button" class="cancel-button">Cancel</button>
+                        </div>
+                    </div>
+              
+                    <div id="denySection" style="display: none;">
+                        <label><span style="color: #dc3545;">Reason for Denial</span> (optional):</label><br>
+                        <textarea id="denyReason" rows="4" placeholder="Please provide a reason for denying this request..."></textarea><br><br>
+                        <div class="action-buttons">
+                        <button id="sendDeny">Send Denial</button>
+                        <button class="cancel-button">Cancel</button>
+                        </div>
+                    </div>
+              
+                    <div class="action-buttons" style="margin-top: 30px;">
+                        <button id="closePopup" class="cancel-button">Close Slip</button>
+                    </div>
+                </div>              
+            </div>
+            <!-- SETTINGS -->
+            <div class="main-content">
+                <div id="settings">
+                    <div class="settingsTabs">
+                        <div class="settingTab active">Account</div>
+                        <div class="settingTab">Security</div>
+                    </div>
+                    <div class="settingsContent">
+                        <div class="settContent active">
+                            <div class="defaultCon">
+                                <div class="profile-picture-container">
+                                    <div class="image-preview" id="imagePreview">
+                                        <img id="previewImg" src="" alt="Profile Picture" style="display: none;">
+                                    </div>
+                                    <label for="fileInput" class="upload-icon"><span class="material-icons icon add_photo">add_a_photo</span></label>
+                                    <input type="file" id="fileInput" accept="image/*" required>
+                                </div>
+                                <div class="floatContainer">
+                                    <div class="floating-container">
+                                      <input type="text" class="floating-input filled" required id="yFname" readonly>
+                                      <span class="floating-label">First Name</span>
+                                    </div>
+                                  
+                                    <div class="floating-container">
+                                      <input type="text" class="floating-input filled" required id="yLname" readonly>
+                                      <span class="floating-label">Last Name</span>
+                                    </div>
+                                </div>
+                                <div class="floatContainer">
+                                    <div class="floating-container">
+                                      <input type="email" class="floating-input filled" required id="email" readonly>
+                                      <span class="floating-label ">Email</span>
+                                    </div>
+    
+                                    <button id="changePwd">Change Password</button>
+                                </div>
+                                <button class="logout-btn">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                    Log Out
+                                </button>
+                            </div>
+                            <div class="passwordBlock">
+                                <h3 style="text-align: center; margin-top: 0;">Change Password</h3>
+                                <div class="floatContainer1">
+                                    <div class="floating-container">
+                                      <input type="password" class="floating-input" required id="OldPwd">
+                                      <span class="floating-label">Old Password</span>
+                                    </div>
+                                    <div class="floating-container">
+                                      <input type="password" class="floating-input" required id="NewPwd">
+                                      <span class="floating-label">New Password</span>
+                                    </div>
+                                    <button class="savePwd">Save</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settContent">
+                            <h1 class="serviceBlkH1 orbitron-discover">Security Detials</h1>
+                            <div class="PaymentBlk">
+                                <button id="shareLocationBtn">Share Location <i class="fa-solid fa-tower-broadcast"></i> </button>
+                                <p id="locationStatus" class="orbitron-discover">
+
+                                </p>
+                                <div class="servicesRendered">
+                                    <div class="schoolYr">
+                                        <label for="" class="orbitron-discover">Latitude 
+                                            <input type="text" id="currentLat" disabled>
+                                        </label>
+                                        <label for="" class="orbitron-discover">Longitude
+                                            <input type="text" id="currentLong" disabled> 
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </main>
+
+    <script type="module" src="mainpage.js"></script>
+    <script type="module" src="mainjs1.js"></script>
+    <script type="module" src="chatbot.js"></script>  
+</body>
+</html>

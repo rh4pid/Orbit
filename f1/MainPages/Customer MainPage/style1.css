@@ -1,0 +1,85 @@
+.popup-header {
+    font-family: 'Orbitron', sans-serif;
+    color: #007bff;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+
+.job-decision {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+#confirmSection,
+#denySection {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid #eee;
+}
+
+.stars {
+    display: flex;
+    gap: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.star {
+    color: #ccc;
+    transition: color 0.2s;
+}
+
+.star.filled {
+    color: gold;
+}
+
+#denyReason {
+    width: calc(100% - 16px);
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+#favouriteCheckbox {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.action-buttons {
+    text-align: right;
+    margin-top: 25px;
+}
+
+#popup2 button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 7px;
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 1rem;
+}
+
+#popup2 button:hover {
+    background: #0056b3;
+}
+
+#popup2 .cancel-button {
+    background-color: #dc3545;
+}
+
+#popup2 .cancel-button:hover {
+    background-color: #c82333;
+}

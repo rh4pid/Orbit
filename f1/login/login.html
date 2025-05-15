@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    
+    <!-- FABICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../LandingPage/fabicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"  href="../LandingPage/fabicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"  href="../LandingPage/fabicon/favicon-16x16.png">
+    <!-- <link rel="manifest" href="..LandingPage/fabicon//site.webmanifest"> -->    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-in">
+            <form id="loginForm">
+                <h1 class="orbitron-discover">Sign In</h1>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <a href="#">Forget Your Password?</a>
+                <span>or</span>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-right">
+                    <h1 class="orbitron-discover">Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit</title>
+    <link rel="stylesheet" href="mainpageArtisan.css">
+    <link rel="stylesheet" href="inbox.css">
+
+    <link rel="icon" type="image/png" sizes="32x32"  href="../../LandingPage/fabicon/favicon-32x32.png">
+    
+    <!-- ICONS FROM FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- GOOGLE ICONS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="charts.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="div-logo">
+            <img src="logo.jpg" alt="" id="logo">
+            &nbsp;
+            <span class="orbitron-discover logo-name">Orbit</span>
+        </div>   
+        <div class="profile-container">
+            <div class="dark-mode-Icons">
+                <i class="fa-solid dark-mode-icon fa-sun"></i> 
+            </div>
+            <div class="headerNotification">
+                <i class="fa-solid fa-bell"></i>
+                <span class="notificationCount">0</span>
+            </div>
+            <img id="profile-button" src="profile-outline.svg"></img> 
+        </div>
+    </header>
+
+    <main>
+        <div class="side-nav">
+            <p class="side-tabs active"><i class="fa-solid fa-house"></i>Home</p>
+            <p class="side-tabs "><i class="fa-solid fa-clock"></i></i>Recent</p>
+            <p class="side-tabs"><i class="fa-solid fa-wallet"></i>Wallet</p>
+            <p class="side-tabs"><i class="fa-solid fa-bell"></i>Notifications</p>
+            <p class="side-tabs"><i class="fa-solid fa-handshake"></i>Engage <span id="engageMsgCount" class="notificationCount1">0</span></p>
+            <p class="side-tabs"><i class="fa-solid fa-gear"></i>Settings</p>
+        </div>
+        <div class="content-container">
+            <div class="main-content active">
+                <div class="home">
+                    <div class="dashboard">
+                        <div class="stats">
+                            <div class="stat" id="ratings">
+                                Ratings<br><span>4.8</span>
+                                <svg class="circle-progress" width="150" height="150">
+                                    <circle cx="75" cy="75" r="65" stroke="#e0e0e011" stroke-width="15" fill="none"></circle>
+                                    <circle cx="75" cy="75" r="65" stroke="var(--rateProgress)" stroke-width="15" fill="none" stroke-dasharray="410" stroke-dashoffset="410" class="progress-ring" stroke-linecap="round"></circle>
+                                </svg>
+                            </div>
+                            <div class="stat" id="jobs">
+                                Total Jobs<br><span>230</span>
+                                <svg class="circle-progress" width="150" height="150">
+                                    <circle cx="75" cy="75" r="65" stroke="#e0e0e011" stroke-width="15" fill="none"></circle>
+                                    <circle cx="75" cy="75" r="65" stroke="var(--jobProgress)" stroke-width="15" fill="none" stroke-dasharray="410" stroke-dashoffset="410" class="progress-ring" stroke-linecap="round"></circle>
+                                </svg>
+                            </div>
+                            <div class="stat" id="revenue">
+                                Revenue<br><span>$12K</span>
+                                <svg class="circle-progress" width="150" height="150">
+                                    <circle cx="75" cy="75" r="65" stroke="#e0e0e011" stroke-width="15" fill="none"></circle>
+                                    <circle cx="75" cy="75" r="65" stroke="var(--revProgress)" stroke-width="15" fill="none" stroke-dasharray="410" stroke-dashoffset="410" class="progress-ring" stroke-linecap="round"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                        <hr class="hr1"><br>
+                        <div class="charts">
+                          <div class="chart-container">
+                            <h3>Destination Map</h3>
+                            <canvas id="lineChart"></canvas>
+                          </div>
+                          <div class="chart-container">
+                            <h3>Work Activity</h3>
+                            <canvas id="barChart"></canvas>
+                          </div>
+                        </div>
+                        <hr><br>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content ">
+                <div id="recents">
+                    <table>
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Location</th>
+                          </tr>
+                        </thead>
+                        <tbody id="recentsTbody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="main-content">
+                <div id="wallet">
+                    <div class="cards">
+                        <div class="expenseCard">
+                            TOTAL EXPENSE
+    
+                        </div>
+                        <div class="expenseCard">
+                            TOTAL EXPENSE
+    
+                        </div>
+                        <div class="expenseCard">
+                            TOTAL EXPENSE
+    
+                        </div>
+                    </div>
+                    <div id="transactions">
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>Cycles</th>
+                                <th>Work</th>
+                                <th>Number</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div id="Notifications">
+                    <table id="acceptedRequestsTable">
+                        <thead>
+                          <tr>
+                            <th>Customer Name</th>
+                            <th>Location</th>
+                            <th>Job Time</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="overlay" id="overlay" id="closePopup"></div>
+                <div class="popup" id="popup">
+                    <h2><span class="ServiceTypeBooking orbitron-discover">- REQUEST -</span></h2>
+                    <div>
+                        <h3 class="orbitron-discover">Customer Details</h3>
+                        <p>Name: <span class="CusName">Nii Brown</span></p>
+                        <p>Loaction: <span class="Cuslocation">Tema Comm 15, roman junction</span></p>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="orbitron-discover">Job Details</h3>
+                        <p>Payment Method: <span class="custPayMed">Cash</span></p>
+                        <p>Time: <span class="custTime">11:00 am - 6:00 pm</span></p>
+                        <p>Days: <span class="CustArtDays">mon || Tue || Wed </span></p>
+                    </div>
+                    <div class="buttonsComfirmPage">
+                        <button id="closePopup" style="background-color: red;">Decline</button>
+                        <button id="confirmAction" style="background-color: blue;">Accept</button>
+                    </div>
+                </div>
+
+                <!-- DISPLAY FOR ACCEPTED REQUESTS -->
+                <div class="overlay" id="overlay1" id="closePopup1"></div>
+    
+                <div class="popup" id="popup1">
+                    <h2><span class="orbitron-discover">- COMPLETION SLIP -</span></h2>
+                    <div>
+                        <H3 class="orbitron-discover">Artisan Details</H3>
+                        <p>Name: <span class="ArtisanName1">Douglas Otoo</span></p>
+                        <p>Service: <span class="ServiceTypeBooking1">Tema Comm 15</span></p>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="orbitron-discover">Customer Details</h3>
+                        <p>Name: <span class="CusName1">Nii Brown</span></p>
+                        <p>Loaction: <span class="Cuslocation1">Tema Comm 15, roman junction</span></p>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="orbitron-discover">Job Details</h3>
+                        <p>Payment Method: <span class="custPayMed1">Cash</span></p>
+                        <p>Time: <span class="custTime1">11:00 am - 6:00 pm</span></p>
+                        <p>Days: <span class="CustArtDays1">mon || Tue || Wed </span></p>
+                    </div>
+                    <div class="buttonsComfirmPage">
+                        <button id="closePopup1">OK</button>
+                        <button id="confirmAction1">Job Completed</button>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div id="EngageCus" class="msgBoxRow active">
+                    <table>
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Message</th>
+                          </tr>
+                        </thead>
+                        <tbody id="engageCusTbody">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div id="inboxMsg" class="msgBoxRow">
+                    <div class="chat-container">
+                        <div class="chat-box" id="chatBox"></div>
+                        <div class="input-container">
+                            <input type="text" id="userInput" placeholder="Reply Customer...">
+                            <button id="sendButton">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div id="settings">
+                    <div class="settingsTabs">
+                        <div class="settingTab active">Account</div>
+                        <div class="settingTab">Service</div>
+                        <div class="settingTab">Payment</div>
+                        <div class="settingTab">Security</div>
+                    </div>
+                    <div class="settingsContent">
+                        <div class="settContent active">
+                            <div class="defaultCon">
+                                <div class="profile-picture-container">
+                                    <div class="image-preview" id="imagePreview">
+                                        <img id="previewImg" src="" alt="Profile Picture" style="display: none;">
+                                    </div>
+                                    <label for="fileInput" class="upload-icon"><span class="material-icons icon add_photo">add_a_photo</span></label>
+                                    <input type="file" id="fileInput" accept="image/*" required>
+                                </div>
+                                <div class="floatContainer">
+                                    <div class="floating-container">
+                                      <input type="text" class="floating-input filled" required id="yFname" readonly>
+                                      <span class="floating-label">First Name</span>
+                                    </div>
+                                  
+                                    <div class="floating-container">
+                                      <input type="text" class="floating-input filled" required id="yLname" readonly>
+                                      <span class="floating-label">Last Name</span>
+                                    </div>
+                                </div>
+                                <div class="floatContainer">
+                                    <div class="floating-container">
+                                      <input type="email" class="floating-input filled" required id="email" readonly>
+                                      <span class="floating-label ">Email</span>
+                                    </div>
+    
+                                    <button id="changePwd">Change Password</button>
+                                </div>
+                                <button class="logout-btn">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                    Log Out
+                                </button>
+                            </div>
+                            <div class="passwordBlock">
+                                <h3 style="text-align: center; margin-top: 0;">Change Password</h3>
+                                <div class="floatContainer1">
+                                    <div class="floating-container">
+                                      <input type="password" class="floating-input" required id="OldPwd">
+                                      <span class="floating-label">Old Password</span>
+                                    </div>
+                                    <div class="floating-container">
+                                      <input type="password" class="floating-input" required id="NewPwd">
+                                      <span class="floating-label">New Password</span>
+                                    </div>
+                                    <button class="savePwd">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settContent">
+                            <h1 class="serviceBlkH1 orbitron-discover">Service Detials</h1>
+                            <div class="serviceBlk">
+                                <label for="" class="orbitron-discover">Name of Instituition
+                                    <input type="text" id="NOI" readonly>
+                                </label>
+                                <div class="schoolYr">
+                                    <label for="" class="orbitron-discover">Year of Admission
+                                        <input type="date" id="yoa" readonly>
+                                    </label>
+                                    <label for="" class="orbitron-discover">Year of Completion
+                                        <input type="date" id="yoc" readonly>
+                                    </label>
+                                </div>
+                                <div class="servicesRendered">
+                                    <label for="" class="orbitron-discover filled">Current Service
+                                        <input type="text" id="CurrentService" readonly>
+                                    </label>
+                                    <div class="artisan-input-group-select">
+                                        <label for="" class="newService orbitron-discover">New Service</label>
+                                        <div class="dropdown">
+                                            <button class="dropdown-button" id="ServiceProvided">Select a Service</button>
+                                            <div class="dropdown-content" id="dropdownContent">
+                                                <input type="text" id="search" class="search-box" placeholder="Search...">
+                                                <div id="items-container" class="item-box"></div>
+                                                <div class="nav-buttons">
+                                                    <button id="navPrev"><i class="fa-solid fa-arrow-left"></i></button>
+                                                    <button id="navNext"><i class="fa-solid fa-arrow-right"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="addServiceBtn">Add</button>
+                                <button class="saveService" style="display: none;">Save</button>
+                            </div>
+                        </div>
+                        <div class="settContent">
+                            <h1 class="serviceBlkH1 orbitron-discover">Payment Detials</h1>
+                            <div class="PaymentBlk">
+                                <div class="schoolYr">
+                                    <label for="" class="orbitron-discover filled">Telephone Number
+                                        <input type="tel" id="telNum" placeholder="+233 55-965-1006" readonly>
+                                    </label>
+                                    <label for="payment-method" class="orbitron-discover filled">Payment Method
+                                        <select id="payment-method">
+                                            <option value="cash">Cash</option>
+                                            <option value="mobile-money">Mobile Money</option>
+                                            <option value="credit-card">Credit Card</option>
+                                        </select>
+                                    </label>                                    
+                                </div>  
+                            </div>
+                            <button class="savePaymentBtn" style="display: none;">Save</button>
+                        </div>
+                        <div class="settContent">
+                            <h1 class="serviceBlkH1 orbitron-discover">Security Detials</h1>
+                            <div class="PaymentBlk">
+                                <div class="schoolYr">
+                                    <label for="" class="orbitron-discover">Home address 
+                                        <input type="text" id="homeAd" readonly>
+                                    </label>
+                                    <label for="" class="orbitron-discover">Work Address
+                                        <input type="text" id="workAd" readonly>
+                                    </label>
+                                </div>
+                                <button class="editAddress">Edit Address<i class="fa-regular fa-pen-to-square"></i></button>
+                                <button id="shareLocationBtn">Share Location <i class="fa-solid fa-tower-broadcast"></i> </button>
+                                <p id="locationStatus" class="orbitron-discover">
+
+                                </p>
+                                <div class="servicesRendered">
+                                    <div class="schoolYr">
+                                        <label for="" class="orbitron-discover">Latitude 
+                                            <input type="text" id="currentLat" disabled>
+                                        </label>
+                                        <label for="" class="orbitron-discover">Longitude
+                                            <input type="text" id="currentLong" disabled> 
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="mainpageArtisan.js" type="module"></script>
+    <script src="inbox.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="firbaseChart.js" type="module"></script>
+    <script src="firebase.js" type="module"></script>
+</body>
+</html>

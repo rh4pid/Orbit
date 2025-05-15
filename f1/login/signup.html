@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title> 
+        <!-- style tag -->
+    <link rel="stylesheet" href="signup.css">
+    
+    <!-- FABICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../LandingPage/fabicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"  href="../LandingPage/fabicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"  href="../LandingPage/fabicon/favicon-16x16.png">
+    <!-- <link rel="manifest" href="..LandingPage/fabicon//site.webmanifest"> -->
+
+    <!-- GOOGLE FONTS GOOGLE FONTS GOOGLE FONTS GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+    <!-- ICONS FROM FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- ICONS FROM BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- GOOGLE ICONS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <!-- HEADER DONE FOR NOW TIMESTAMP 25/01/25 -->
+    <header>
+        <div id="div-logo">
+            <img src="../LandingPage/logo.jpg" alt="" id="logo">
+            <span class="orbitron-discover logo-name">Orbit</span>
+        </div>
+    </header>
+    
+    <!-- MAIN DONE FOR NOW, TIMESTAMP 29/01/25 -->
+    <main>
+        <div class="main-div">
+            <div class="slide-show active">
+                <h1 class="slide-show-ttl orbitron-discover">Welcome To</h1>
+                <h1 class="slide-show-ttl orbitron-discover">ORBIT</h1>
+                <p class="slide-show-txt ">Have you been stressed looking for a service provider around your locality?</p>
+                <p class="slide-show-txt ">Sign up now and discover a wide range of adroit service providers around you</p>
+                <h2 class="slide-show-btn permanent-marker-regular">Sign up now <i class="fa-solid fa-arrow-right"></i></h2>
+            </div>
+            <div class="slide-show">
+                <h1 class="slide-show-ttl orbitron-discover">Hey There!</h1>
+                <p class="slide-show-sub-ttl orbitron-discover">Welcome To Orbit</p>
+                <p class="slide-show-txt">Are you a skilled artisan trying to expand your reach? 
+                    Are you looking for better ways to manage your funds?</p>
+                <p class="slide-show-txt">Or do want to properly schedule your workloads?</p>
+                <p class="slide-show-txt">Sign up now for these and more!!</p>
+                <h2 class="slide-show-btn permanent-marker-regular">Sign up now <i class="fa-solid fa-arrow-right"></i></h2>
+            </div>
+        </div>
+
+        <div class="main-div1">
+            <div class="signup-container">
+                <div class="user-tabs">
+                    <div class="tab_btn orbitron-discover active">Service requester</div>
+                    <div class="tab_btn orbitron-discover">Service Provider</div>
+                </div>
+
+                <div class="user-contents">
+                    <div class="content active">
+                        <div class="body1">
+                            <form class="containerRequest" id="RcontactForm">
+                                <h2 class="container-txt orbitron-discover">Create An Account</h2>
+                                <div class="input-group name-group">
+                                    <input type="text" placeholder="Firstname" id="RfirstName">
+                                    <input type="text" placeholder="Lastname" id="RlastName">
+                                </div>
+                                <div class="input-group password-group">
+                                    <input type="email" placeholder="Email" id="Remail">
+                                    <input type="password" placeholder="Password" id="Rpassword">
+                                    <input type="password" placeholder="Confirm password" id="RconfirmPassword">
+                                </div>
+                                <button class="submit-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="artisan">
+                            <div class="steps">
+                                <span class="circle active"><span class="material-icons icon">person</span></span>
+                                <span class="circle"><span class="material-icons icon">badge</span></span>
+                                <span class="circle"><span class="material-icons icon">verified</span></span>
+                                <span class="circle"><span class="material-icons icon">lock</span></span>
+                                <div class="progress-bar"><span class="indicator"></span></div>
+                            </div>
+                            <form class="steps-body" id="PcontactForm">
+                                <div class="artisan-content active">
+                                    <h1>Personal Details</h1>
+                                    <div class="profile-picture-body">
+                                        <div class="profile-picture-container">
+                                            <div class="image-preview" id="imagePreview">
+                                                <img id="previewImg" src="" alt="Profile Picture" style="display: none;">
+                                            </div>
+                                            <label for="fileInput" class="upload-icon"><span class="material-icons icon add_photo">add_a_photo</span></label>
+                                            <input type="file" id="fileInput" accept="image/*" required>
+                                        </div>
+                                    </div>
+                                    <div class="names">
+                                        <div class="artisan-input-group">
+                                            <input type="text" required id="PfirstName">
+                                            <label for="">Firstname</label>
+                                        </div>
+                                        <div class="artisan-input-group">
+                                            <input type="text" required id="PlastName">
+                                            <label for="">Lastname</label>
+                                        </div>
+                                    </div>
+                                    <div class="non-names">
+                                        <div class="artisan-input-group">
+                                            <input type="email" required id="Pemail">
+                                            <label for="">Email</label>
+                                        </div>
+                                        <div class="artisan-input-group">
+                                            <input type="tel" required id="Ptel">
+                                            <label for="Ptel">Telephone</label>
+                                            <span id="telError" style="color: red; display: none;"></span>
+                                        </div>
+                                        <div class="artisan-input-group">
+                                            <div class="select-menu">
+                                                <div class="select-btn">
+                                                    <span class="sBtn-text" id="Page">Select Age</span>
+                                                    <i class="bx bx-chevron-down"></i>
+                                                </div>
+                                
+                                                <ul class="options">
+                                                    <li class="option">
+                                                    <span class="option-text">18 - 30</span>
+                                                    </li>
+                                                    <li class="option">
+                                                    <span class="option-text">31 - 50</span>
+                                                    </li>
+                                                    <li class="option">
+                                                    <span class="option-text">50 + </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    <div class="radio-selection">
+                                        <div class="artisan-input-group-radio">
+                                            <label>
+                                                <input type="radio" name="gender" value="male"> Male
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="gender" value="female"> Female
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="artisan-content">
+                                    <h1>Certification</h1>
+                                    <div class="non-names ">
+                                        <div class="artisan-input-group-select">
+                                            <div class="dropdown">
+                                                <button class="dropdown-button" id="ServiceProvided">Select a Service</button>
+                                                <div class="dropdown-content" id="dropdownContent">
+                                                    <input type="text" id="search" class="search-box" placeholder="Search...">
+                                                    <div id="items-container" class="item-box"></div>
+                                                    <div class="nav-buttons">
+                                                        <button id="navPrev"><i class="fa-solid fa-arrow-left"></i></button>
+                                                        <button id="navNext"><i class="fa-solid fa-arrow-right"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="artisan-input-group">
+                                            <div class="select-menu">
+                                                <div class="select-btn">
+                                                    <span class="sBtn-text" id="yrsExp">Select Years of Experience</span>
+                                                    <i class="bx bx-chevron-down"></i>
+                                                </div>
+                                
+                                                <ul class="options">
+                                                    <li class="option">
+                                                    <span class="option-text">1 - 5</span>
+                                                    </li>
+                                                    <li class="option">
+                                                    <span class="option-text">6 - 10</span>
+                                                    </li>
+                                                    <li class="option">
+                                                    <span class="option-text">10 + </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div> 
+                                        <div class="artisan-input-group">
+                                            <div class="select-menu">
+                                                <div class="select-btn">
+                                                    <span class="sBtn-text" id="EduBg">Select Educational Background</span>
+                                                    <i class="bx bx-chevron-down"></i>
+                                                </div>
+                                
+                                                <ul class="options">
+                                                    <li class="option">
+                                                    <span class="option-text">Basic Education</span>
+                                                    </li>
+                                                    <li class="option">
+                                                    <span class="option-text">Secondary Eduction</span>
+                                                    </li>
+                                                    <li class="option">
+                                                    <span class="option-text">Tertiary Education</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="radio-selection">
+                                        <div class="artisan-input-group-radio">
+                                            <label>
+                                                <input type="radio" name="certificate" value="certified"> Certified
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="certificate" value="not certified"> Not Certified
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="certificate-proof">
+                                        <h3>Proof of Certification</h3>
+                                        <div class="non-names ">
+                                            <div class="artisan-input-group">
+                                                <input type="text" required id="ServiceInstitution">
+                                                <label for="">Name of Institution</label>
+                                            </div> 
+                                        </div>
+                                        <div class="names">
+                                            <div class="artisan-input-group">
+                                                <input type="number" required id="yrAdmin">
+                                                <label for="">Year of Admission</label>
+                                            </div>
+                                            <div class="artisan-input-group">
+                                                <input type="number" required id="yrComp">
+                                                <label for="">Year of Completion</label>
+                                            </div>
+                                        </div>
+                                        <div class="certificate-container">
+                                            <label for="file1" class="custom-file-label"><i class="fa-solid fa-upload"></i> Upload Certificate</label>
+                                            <input type="file" id="file1" class="file-input" accept="image/*" onchange="displayPreview(this)">
+                                            <img id="preview1" class="preview" alt="Image Preview">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="artisan-content">
+                                    <h1>Verification</h1>
+                                    <div class="Verification-proof">
+                                        <div class="artisanLocationInput">
+                                            <div class="artisan-input-group">
+                                                <input type="text" required id="PhomeLoc" placeholder=" " oninput="toggleIcon('PhomeLoc')">
+                                                <label for="PhomeLoc">Home Address</label>
+                                                <span class="icon" onclick="getUserLocation('PhomeLoc')"><i class="fa-solid fa-location-dot" style="color: #ff0000;"></i></span>
+                                            </div>
+                                            <div class="artisan-input-group">
+                                                <input type="text" required id="PworkLoc" placeholder=" " oninput="toggleIcon('PworkLoc')">
+                                                <label for="PworkLoc">Work Address</label>
+                                                <span class="icon" onclick="getUserLocation('PworkLoc')"><i class="fa-solid fa-location-dot" style="color: #ff0000;"></i></span>
+                                            </div>
+                                        </div>
+                                        <!-- TIMESTAMP 19-02-2025 --FIX ISSUES WITH UPLOAD-->
+                                        <!-- TIMESTAMP 22-02-2025 ISSUES HAVE BEEN FIXED  -->
+                                        <div class="non-names">
+                                            <div class="artisan-input-group">
+                                                <input type="text" id="policeReport" required>
+                                                <label for="">Police Reference Number</label>
+                                            </div>
+                                        </div>
+                                        <div class="names">
+                                            <div class="certificate-container">
+                                                <label for="file3" class="custom-file-label" id="frontGcard"><i class="fa-solid fa-upload"></i>Upload Front GhanaCard</label>
+                                                <input type="file" id="file3" class="file-input" accept="image/*" onchange="displayFileNameAndPreview(this)">
+                                                <img id="preview3" class="preview" alt="Image Preview">
+                                            </div>
+                                            <div class="certificate-container">
+                                                <label for="file4" class="custom-file-label" id="backGcard"><i class="fa-solid fa-upload"></i>Upload Back GhanaCard</label>
+                                                <input type="file" id="file4" class="file-input" accept="image/*" onchange="displayFileNameAndPreview(this)">
+                                                <img id="preview4" class="preview" alt="Image Preview">
+                                            </div>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <div class="artisan-content">
+                                    <h1>Payment Details</h1>
+                                    <div class="non-names">
+                                        <div class="artisan-input-group">
+                                            <input type="password" id="Ppassword" required>
+                                            <label for="">Password</label>
+                                        </div>
+                                        <div class="artisan-input-group">
+                                            <input type="password" id="PconfirmPassword" required>
+                                            <label for="">Confirm Password</label>
+                                        </div> 
+                                        <div class="artisan-input-group">
+                                            <label class="passText"><i class="fa-regular fa-circle-check"></i> <span class="confirmationTxt">Password Doesn't match</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="artisan-buttons">
+                                <button id="prev" style="display: none;" class="button">Prev</button>
+                                <button id="next" class="button artisan-submit active">Next</button>
+                                <button class="artisan-submit" id="artisanSubmit">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- FOOTER DONE FOR NOW TIMESTAMP 25/01/25 -->
+    <footer>
+        <div class="container">
+            <div class="footer-brand">
+                <h1>ORBIT</h1>
+                <p>We connect service providers and service requesters easily while ensuring the safety of both the customers and the artisans.</p>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-phone"></i> +1 23 456 789</li>
+                    <li><i class="fa-regular fa-envelope"></i> <a href="mailto:support@orbit.com">support@orbit.com</a></li>
+                    <li><i class="fa-solid fa-location-crosshairs"></i> 123 Orbit Lane, CO, USA</li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">For Service Providers</a></li>
+                        <li><a href="#">Safety & Trust</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-resources">
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul> 
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter fa-2xl"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                    <a href="#"><i class="fa-regular fa-envelope fa-2xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 ORBIT. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- Script tag -->
+    <script src="signup.js"></script>
+    <script src="firbaseSignup.js"  type="module"></script>
+</body>
+</html>
