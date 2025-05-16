@@ -830,7 +830,7 @@ async function displayFileNameAndPreview(input) {
   formData.append("image", file);
 
   try {
-    let response = await fetch("https://orbitend.onrender.com/verify_ref", {
+    let response = await fetch("https://orbitend.onrender.com/verify", {
       method: "POST",
       body: formData,
     });
