@@ -1,9 +1,13 @@
 services:
   - type: web
-    name: ghana-card-backend
-    env: python
+    name: orbitend-backend
+    env: docker
     plan: free
+    dockerfilePath: f2/Dockerfile
     rootDir: f2
+    envVars:
+      - key: PORT
+        value: 10000
     buildCommand: ./build.sh
     startCommand: gunicorn app:app
     envVars:
